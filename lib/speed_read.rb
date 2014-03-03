@@ -11,18 +11,21 @@ module SpeedRead
     def start(words_per_minute)
       puts " " * ORP_VISUAL_POS + "v".colorize(:red)
       ARGF.each do |line|
-         words = line.chomp.split(/(?:-|\s)+/).compact.reject{|e| e.empty?}
-         words.each do |w|
-           word = w.chomp.strip
+         words = tokenize(line)
+         words.each do |word|
            # pad the end of your lines with spaces if they might be shorter than the previous line.
-           i = find_ORP(word);
-           output = " " * (ORP_VISUAL_POS-i) + colorize_word(word,i)
+           orp = find_ORP(word);
+           output = " " * (ORP_VISUAL_POS-orp) + colorize_word(word,orp)
            print output.ljust(80, " ") + "#{words_per_minute} wpm\r"
            $stdout.flush
            sleep (60.0 / words_per_minute.to_i)
          end
       end
       puts
+    end
+
+    def tokenize(input)
+       input.chomp.split(/(?:-|\s)+/).compact.reject{|e| e.empty?}
     end
 
     # ORP: Optical Recognition Point (the red-colored alignment pilot),

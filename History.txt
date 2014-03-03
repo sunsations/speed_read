@@ -1,3 +1,8 @@
+== 0.0.3 / 2014-03-04
+* Improve test coverage.
+* Improve helper script to build and test.
+* Add helper script to push the gem.
+
 == 0.0.2 / 2014-03-03
 * Update homepage url.
 

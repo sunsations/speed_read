@@ -4,6 +4,31 @@ require 'minitest/autorun'
 
 class SpeedReadTest < Minitest::Unit::TestCase
 
+  def test_word_tokenization
+    assert_equal ["a", "b", "c"], SpeedRead.tokenize("a b c")
+  end
+
+  def test_word_tokenization_with_punctuation
+    assert_equal ["a", "b", "c."], SpeedRead.tokenize("a b c.")
+    assert_equal ["a", "b", "c?"], SpeedRead.tokenize("a b c?")
+    assert_equal ["a", "b:", "c"], SpeedRead.tokenize("a b: c")
+    assert_equal ["a,", "b", "c"], SpeedRead.tokenize("a, b c")
+  end
+
+  def test_word_tokenization_with_new_line
+    assert_equal ["a", "b", "c"], SpeedRead.tokenize("a b c\n")
+    assert_equal ["a", "b", "c"], SpeedRead.tokenize("\na b c")
+    assert_equal ["a", "b", "c"], SpeedRead.tokenize("\na \nb \nc\n")
+  end
+
+  def test_word_tokenization_with_leading_whitespaces
+    assert_equal ["a", "b", "c"], SpeedRead.tokenize("   a b c")
+  end
+
+  def test_word_tokenization_with_trailing_whitespaces
+    assert_equal ["a", "b", "c"], SpeedRead.tokenize("a b c     ")
+  end
+
   def test_find_correct_orp
     assert_equal 0, SpeedRead.find_ORP("")
     assert_equal 0, SpeedRead.find_ORP("1")

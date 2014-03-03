@@ -8,9 +8,10 @@ Gem::Specification.new do |spec|
   spec.version       = SpeedRead::VERSION
   spec.authors       = ["Thomas Arni"]
   spec.email         = ["thomas.arni@gmail.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
-  spec.homepage      = ""
+  spec.summary       = %q{A simple terminal-based open source spritz-alike.}
+  spec.description   = %q{A simple terminal-based open source spritz-alike. Allows you to read at a much more rapid pace.}
+  #TODO set correct homepage
+  spec.homepage      = "https://github.com/sunsations"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
@@ -18,6 +19,7 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.add_development_dependency "bundler", "~> 1.5"
-  spec.add_development_dependency "rake"
+  spec.add_development_dependency "bundler", "~> 1.4"
+  spec.add_development_dependency "rake", '~> 0'
+  spec.add_dependency 'colorize', '~> 0.6'
 end

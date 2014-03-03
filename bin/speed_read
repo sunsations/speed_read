@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+
+require 'colorize'
+require 'optparse'
+require 'speed_read'
+
+options = {}
+optparse = OptionParser.new do|opts|
+  opts.banner = "Usage: speed_read [options] file1 file2 ..."
+  options[:wpm] = 250
+  opts.on('-w', '--wpm WPM', 'Sets words per minute to WPM') do |wpm|
+    options[:wpm] = wpm.to_i
+  end
+end
+optparse.parse!
+
+SpeedRead.start(options[:wpm])

@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.summary       = %q{A simple terminal-based open source spritz-alike.}
   spec.description   = %q{A simple terminal-based open source spritz-alike. Allows you to read at a much more rapid pace.}
   #TODO set correct homepage
-  spec.homepage      = "https://github.com/sunsations"
+  spec.homepage      = "https://github.com/sunsations/speed_read"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)

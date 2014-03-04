@@ -25,7 +25,7 @@ module SpeedRead
     end
 
     def tokenize(input)
-       input.chomp.split(/(?:-|\s)+/).compact.reject{|e| e.empty?}
+       input.force_encoding("utf-8").chomp.split(/(?:-|\s)+/).compact.reject{|e| e.empty?}
     end
 
     # ORP: Optical Recognition Point (the red-colored alignment pilot),

@@ -1,3 +1,6 @@
+== 0.0.4 / 2014-03-04
+* Force utf-8 encoding
+
 == 0.0.3 / 2014-03-04
 * Improve test coverage.
 * Improve helper script to build and test.

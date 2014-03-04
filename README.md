@@ -1,5 +1,7 @@
 # SpeedRead
 
+A simple terminal-based open source Spritz-alike.
+
 This is a yet simplistic implementation in ruby of [Pasky's Perl version](https://github.com/pasky/speedread).
 
 ## Installation

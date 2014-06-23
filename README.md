@@ -1,5 +1,7 @@
 # SpeedRead
 
+[![Dependency Status](https://gemnasium.com/sunsations/speed_read.svg)](https://gemnasium.com/sunsations/speed_read)
+
 A simple terminal-based open source Spritz-alike.
 
 This is a yet simplistic implementation in ruby of [Pasky's Perl version](https://github.com/pasky/speedread).
